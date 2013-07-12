@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <p style= "text-align: center;">
+    <title>IdeaBox</title>
+  </head>
+  <body style='background: #FA58F4'>
+  <body>
+    <h1>
+      <p style="text-align: center;">IdeaBox</p>
+    </h1>
+    <form action='/' method='POST'>
+      <p>
+        <p style= "text-align: center;">
+        Your Idea:
+      </p>
+      <p style= "text-align: center;">
+      <input type='text' name='idea_title'/><br/>
+      <textarea name='idea_description'></textarea><br/>
+      <input type='submit'/>
+    </form>
+     <p style="text-align: center;"</p>
+    <img src=http://geekifyinc.com/wp-content/uploads/2013/02/Idea-Box.png></a>
+    <h3>
+      <p style="text-align: center;">Existing Ideas</p>
+    </h3>
+    <ul>
+      <% ideas.each_with_index do |idea, index| %>
+      <li>
+        <%= idea.title %><br/>
+        <%= idea.description %>
+        <form action='/<%= index %>' method='POST'>
+          <input type="hidden" name="_method" value="DELETE">
+          <input type='submit' value="Delete!"/>
+        </form>
+      </li>
+      <%end%>
+    </ul>
+  </body>
+</html>
