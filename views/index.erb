@@ -24,13 +24,14 @@
       <p style="text-align: center;">Existing Ideas</p>
     </h3>
     <ul>
-      <% ideas.each_with_index do |idea, index| %>
+      <% ideas.each_with_index do |idea, id| %>
       <li>
         <%= idea.title %><br/>
         <%= idea.description %>
-        <form action='/<%= index %>' method='POST'>
+        <a href="/<%= id %>/edit">Edit</a>
+        <form action="/<%= id %>" method="POST">
           <input type="hidden" name="_method" value="DELETE">
-          <input type='submit' value="Delete!"/>
+          <input type="submit" value="Delete!"/>
         </form>
       </li>
       <%end%>
